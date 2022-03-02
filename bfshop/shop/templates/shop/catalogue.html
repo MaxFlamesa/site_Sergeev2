@@ -5,8 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load static %}
+    <link href = "{% static 'css/base.css' %}" rel = "stylesheet" >
 </head>
 <body>
-    <p> cato</p>
+    {% for product in all_products %}
+        <div class = "product-card"> 
+            <p> {{ product }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>

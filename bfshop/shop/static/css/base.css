@@ -1,0 +1,10 @@
+.product-card {
+    display: inline-flex;
+    height: 500px;
+    width: 300px;
+    background-color: antiquewhite;
+}
+
+.product-card :hover {
+    border: 3px solid black;
+}
