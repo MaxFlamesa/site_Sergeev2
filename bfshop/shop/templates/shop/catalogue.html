@@ -11,7 +11,8 @@
 <body>
     {% for product in all_products %}
         <div class = "product-card"> 
-            <p> {{ product }}</p>
+            {#<!--<img src = '{{ MEDIA_ROOT |add: product.image.url }}' >-->#}
+            <img src="{% static {{product.img.url}}%}">
         </div>
     {% endfor %}
 </body>
