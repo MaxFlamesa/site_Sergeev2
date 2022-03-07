@@ -10,12 +10,12 @@
 </head>
 <body>
     {% for product in all_products %}
-        <div class = "product-card" >
+        <div class = "product-card">
             <div class = "product-image-container">
                 <img class = "product-image" src = '{{product.image.url}}'>
             </div>
             <div class = "product-title-container">
-                <p class = "product-card-title" > {{ product.name }}</p>
+                <a href = "cart/add/{{ product.id }}" > <p class = "product-card-title" > {{ product.name }}</p> </a>
                 <p class = "product-card-title" > {{ product.price }}</p>
             </div>
         </div>
