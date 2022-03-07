@@ -7,4 +7,4 @@ from bfshop.settings import MEDIA_ROOT
 
 def index(request):
     all_products = Product.objects.all()
-    return render(request, 'shop/catalogue.html', {'all_products' : all_products, 'MEDIA_ROOT' : MEDIA_ROOT})
+    return render(request, 'shop/catalogue.html', {'all_products' : all_products})

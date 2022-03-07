@@ -1,10 +1,37 @@
 .product-card {
-    display: inline-flex;
-    height: 500px;
-    width: 300px;
-    background-color: antiquewhite;
+    display: inline-block;
+    height: 400px;
+    width: 25%;
+    background-color: rgba(206, 248, 255, 0.932);
 }
 
-.product-card :hover {
-    border: 3px solid black;
+.product-card:hover {
+    border: 1px solid black;
+}
+
+.product-card-title {
+    display: block;
+    height: 10%;
+    margin: 5% 0;
+    width: 100%;
+    text-align: center;
+}
+
+.product-image-container {
+    height: auto;
+    max-width: 95%;
+    max-height: 70%;
+    object-fit: contain;
+    margin: 2% auto;   
+}
+
+.product-image {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.product-title-container {
+    display: block;
+    height: 30%;
 }
