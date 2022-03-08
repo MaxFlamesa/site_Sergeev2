@@ -8,3 +8,6 @@ from bfshop.settings import MEDIA_ROOT
 def index(request):
     all_products = Product.objects.all()
     return render(request, 'shop/catalogue.html', {'all_products' : all_products})
+
+def login_page(request):
+    return render(request, 'shop/login_page.html', {})

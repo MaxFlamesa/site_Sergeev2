@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .cart import Cart
-from shop.models import Product
+from shop.models import Product, Order, List, User
 from django.views.decorators.http import require_POST
-from .forms import CartAddProductForm
+from shop.views import index
+
 
 # Create your views here.
 
@@ -15,3 +16,14 @@ def cart_add(request, product_id):
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'cart_manager/detail.html', {'cart' : cart})
+
+def cart_release(request):
+    cart = Cart(request)
+    a = User.objects.all()
+    order = Order(user_id = a[0], status = 'pending')
+    order.save()
+    for item in cart:
+        list = List(order_id = order, product_id = item['product'], county = item['county'], pay_price = item['price'])
+        list.save()
+    cart.clear()
+    return redirect('index')

@@ -4,5 +4,6 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('', views.index, name = 'index'),
-    path('cart/', include('cart_manager.urls'))
+    path('login/', views.login_page, name = 'login_page'),
+    path('cart/', include('cart_manager.urls')),
 ]
