@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {% load static %}
-    <link href = "{% static 'css/base.css' %}" rel = "stylesheet" >
-</head>
-<body>
-    {% for product in all_products %}
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% for product in all_products %}
         <div class = "product-card">
             <div class = "product-image-container">
                 <img class = "product-image" src = '{{product.image.url}}'>
@@ -19,6 +13,6 @@
                 <p class = "product-card-title" > {{ product.price }}</p>
             </div>
         </div>
-    {% endfor %}
-</body>
-</html>
+{% endfor %} 
+
+{% endblock content %}
