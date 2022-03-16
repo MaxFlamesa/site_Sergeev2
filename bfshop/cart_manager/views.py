@@ -20,7 +20,7 @@ def cart_detail(request):
 def cart_release(request):
     cart = Cart(request)
     a = User.objects.all()
-    order = Order(user_id = a[0], status = 'pending')
+    order = Order(user_id = request.user, status = 'pending')
     order.save()
     for item in cart:
         list = List(order_id = order, product_id = item['product'], county = item['county'], pay_price = item['price'])

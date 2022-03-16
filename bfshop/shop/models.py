@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -10,19 +11,18 @@ class Product(models.Model):
     def __str__(self):
         return str(self.name)
 
-class User(models.Model):
-    login = models.TextField()
-    password = models.TextField()
-
+class User(AbstractUser):
+    pass
+    
     def __str__(self):
-        return str(self.login)
+        return str(self.username)
 
 class Order(models.Model):
     user_id = models.ForeignKey('User', on_delete = models.CASCADE)
     status = models.TextField()
 
     def __str__(self):
-        return str(self.user_id.login) + '/' + str(self.status)
+        return str(self.user_id.username) + '/' + str(self.status)
 
 class List(models.Model):
     order_id = models.ForeignKey('Order', on_delete = models.CASCADE)
